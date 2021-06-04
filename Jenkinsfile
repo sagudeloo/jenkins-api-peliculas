@@ -1,6 +1,6 @@
 pipeline {
 
-    agent any
+    agent none
 
     stages {
 
@@ -10,7 +10,7 @@ pipeline {
                 echo 'building docker image'
 
                 sh """
-                    docker build -t api-peliculas
+                    docker build ./ -t api-peliculas
                 """
             }
         }
