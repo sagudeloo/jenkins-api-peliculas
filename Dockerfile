@@ -12,7 +12,8 @@ ENV FLASK_ENV "development"
 ENV APP_SETTINGS_MODULE "config.default"
 
 RUN flask db init
-RUN flask db migrate
+RUN flask db revision --rev-id a82cb2d4551e
+RUN flask db migrate  -m "Initial_db"
 RUN flask db upgrade
 
 EXPOSE 5000
